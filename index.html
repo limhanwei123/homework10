@@ -1,35 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First CSS-HTML Document</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 
-    <link href="https://fonts.googleapis.com/css2?family=Fondamento&family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
-    <h1>Lorem ipsum dolor sit amet consectetur</h1>
+  
+  <div class="page">
 
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab placeat veniam, nulla laudantium velit sapiente. Laudantium harum accusamus facilis, eaque voluptatibus unde a id perspiciatis aliquid, maxime voluptatum assumenda.
-    </p>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <h3>Homework 4</h3>
+          <p>Created by Lim Han Wei</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
 
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorum dicta laudantium. Tenetur recusandae ratione ullam neque nostrum, odio omnis mollitia error aperiam officiis hic excepturi vitae natus, tempore similique?
-    </p>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <h3>Visualisation 1</h3>
+        <div id="choropleth_map" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+    
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+          <h3>Visualisation 2</h3>
+        <div id="bar_graph" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
 
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus eius sapiente et tenetur, facilis libero esse facere deserunt mollitia veniam inventore ducimus exercitationem minima dignissimos. Itaque nobis eligendi nemo minus? Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Facere praesentium ex officia. Amet, facere suscipit et vel eius fuga nulla, quisquam dolorum laboriosam est iure? Similique impedit cumque quod blanditiis. Lorem ipsum dolor sit, amet consectetur adipisicing
-        elit. Aperiam placeat neque expedita culpa dolores voluptatibus voluptate nemo, laborum reprehenderit corrupti molestias. Amet numquam, tempora minus officia quod voluptatibus dolorem. Alias. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Dolore vero quas minus doloremque alias saepe error. Porro cumque impedit tempora veritatis maxime iusto! Et eligendi sapiente magni sint similique quisquam?
-    </p>
+  </div> <!-- end page -->
+
+
+<script type="text/javascript">
+  var spec1 = "concept1.json";
+  vegaEmbed('#choropleth_map', spec1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec2 = "concept2.json";
+  vegaEmbed('#bar_graph', spec2, { "actions": false }).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+</script>
+
 </body>
-
 </html>
